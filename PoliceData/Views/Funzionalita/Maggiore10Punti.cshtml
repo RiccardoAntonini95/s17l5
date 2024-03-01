@@ -1,0 +1,22 @@
+﻿<h1>Tabella Verbali con più di 10 punti decurtati</h1>
+
+<table class="table">
+    <tr>
+        <th scope="col">Importo</th>
+        <th scope="col">Cognome</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Data di violazione</th>
+        <th scope="col">Decurtazione punti</th>
+    </tr>
+    @foreach (var verbale in Model)
+    {
+        <tr>
+            <td>@verbale["Importo"]</td>
+            <td>@verbale["Cognome"]</td>
+            <td>@verbale["Nome"]</td>
+            <td>@verbale["DataViolazione"]</td>
+            <td>@verbale["DecurtazionePunti"]</td>
+        </tr>
+    }
+
+</table>

@@ -3,13 +3,6 @@
 
 @model Verbali
 
-@* <div>
-    @foreach(var violazione in ViewBag.listaViolazioni)
-    {
-        <p>@violazione.Id</p>
-        <p>@violazione.TipoViolazione</p>
-    }
-</div> *@
 
 <form class="text-center" method="post" asp-controller="Verbale" asp-action="AggiungiVerbale">
     <fieldset>
@@ -40,7 +33,6 @@
         <br>
         <label asp-for="@Model.IdAnagrafica">Trasgressore:</label>
         <select asp-for="@Model.IdAnagrafica">
-            @*ciclo foreach per le opzioni, value è idanagrafica, la scritta è nome e cognome*@
             @foreach (var trasgressore in ViewBag.listaAnagrafiche)
             {
                 <option value="@trasgressore.Id">@trasgressore.Cognome @trasgressore.Nome</option>
@@ -50,7 +42,6 @@
         <br>
         <label asp-for="@Model.IdViolazione">Tipo Violazione:</label>
         <select asp-for="@Model.IdViolazione">
-            @*ciclo foreach per le opzioni, value è idviolazione, la scritta è descrizione abbreviata coi 3 punti*@
             @foreach (var violazione in ViewBag.listaViolazioni)
             {
                 <option value="@violazione.Id">@violazione.TipoViolazione</option>
@@ -58,6 +49,6 @@
         </select>
         <br>
         <br>
-        <button type="submit" value="Submit">Aggiungi Anagrafica</button>
+        <button type="submit" value="Submit">Aggiungi Verbale</button>
     </fieldset>
 </form>

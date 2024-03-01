@@ -63,5 +63,31 @@ namespace PoliceData.Controllers
             return View();
         }
 
+        [HttpPost]
+        public IActionResult AggiungiVerbale(Verbali nuovoVerbale)
+        {
+            try
+            {
+                ConnDb.conn.Open();
+
+                var command = new SqlCommand(@"INSERT INTO Verbali
+              (DataViolazione, IndirizzoViolazione, Nominativo_Agente, DataTrascrizioneVerbale, Importo, DecurtamentoPunti, IdAnagrafica, IdViolazione) VALUES
+              (@dataViolazione, @indirizzoViolazione, @nominativoAgente, @dataTrascrizioneVerbale, CONVERT(SMALLMONEY, @importo), @decurtamentoPunti, @idAnagrafica, @idViolazione)", ConnDb.conn);
+                command.Parameters.AddWithValue("@dataViolazione", nuovoVerbale.DataViolazione);
+                command.Parameters.AddWithValue("@indirizzoViolazione", nuovoVerbale.IndirizzoViolazione);
+                command.Parameters.AddWithValue("@nominativoAgente", nuovoVerbale.NominativoAgente);
+                command.Parameters.AddWithValue("@dataTrascrizioneVerbale", nuovoVerbale.DataTrascrizioneVerbale);
+                command.Parameters.AddWithValue("@importo", nuovoVerbale.Importo);
+                command.Parameters.AddWithValue("@decurtamentoPunti", nuovoVerbale.DecurtamentoPunti);
+                command.Parameters.AddWithValue("@idAnagrafica", nuovoVerbale.IdAnagrafica);
+                command.Parameters.AddWithValue("@idViolazione", nuovoVerbale.IdViolazione);
+                var nRows = command.ExecuteNonQuery();
+
+            }
+            catch (Exception ex) { }
+            finally { ConnDb.conn.Close(); }
+            return RedirectToAction("Index", "Home");
+        }
+
     }
 }

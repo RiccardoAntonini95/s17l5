@@ -1,0 +1,21 @@
+﻿
+@{
+}
+<h1>Tabella violazioni maggiori di 400 euro</h1>
+
+<table class="table">
+    <tr>
+        <th scope="col">Data Violazione</th>
+        <th scope="col">Nominativo Agente</th>
+        <th scope="col">Importo</th>
+    </tr>
+    @foreach (var verbale in Model)
+    {
+        <tr>
+            <td>@verbale["DataViolazione"]</td>
+            <td>@verbale["Nominativo_Agente"]</td>
+            <td>@verbale["Importo"]</td>
+        </tr>
+    }
+
+</table>
