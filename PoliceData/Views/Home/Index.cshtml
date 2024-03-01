@@ -3,6 +3,11 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Benvenuto</h1>
+    <p class="display-6">Quale servizio si vuole utilizzare?</p>
+    <div class="d-flex justify-content-evenly">
+        <a class="btn btn-warning" asp-controller="Anagrafe" asp-action="AggiungiAnagrafe">Aggiungi Anagrafe</a>
+        <a class="btn btn-warning" asp-controller="Verbale" asp-action="AggiungiVerbale">Aggiungi Verbale</a>
+        <a class="btn btn-warning" asp-controller="Funzionalita" asp-action="Index">Funzionalità Aggiuntive</a>
+    </div>
 </div>
