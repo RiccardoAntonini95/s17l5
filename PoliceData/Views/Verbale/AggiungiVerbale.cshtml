@@ -1,51 +1,60 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
 }
+
+@model Verbali
+
+@* <div>
+    @foreach(var violazione in ViewBag.listaViolazioni)
+    {
+        <p>@violazione.Id</p>
+        <p>@violazione.TipoViolazione</p>
+    }
+</div> *@
 
 <form class="text-center" method="post" asp-controller="Verbale" asp-action="AggiungiVerbale">
     <fieldset>
         <legend>Nuovo Verbale:</legend>
-        <label for="DataViolazione">Data Violazione:</label>
-        <input type="date" id="DataViolazione" name="DataViolazione">
+        <label asp-for="@Model.DataViolazione">Data Violazione:</label>
+        <input type="date" asp-for="@Model.DataViolazione">
         <br>
         <br>
-        <label for="IndirizzoViolazione">Indirizzo Violazione:</label>
-        <input type="text" id="IndirizzoViolazione" name="IndirizzoViolazione">
+        <label asp-for="@Model.IndirizzoViolazione">Indirizzo Violazione:</label>
+        <input type="text" asp-for="@Model.IndirizzoViolazione" placeholder="Inserisci indirizzo..">
         <br>
         <br>
-        <label for="NominativoAgente">Nominativo Agente:</label>
-        <input type="text" id="NominativoAgente" name="NominativoAgente">
+        <label asp-for ="@Model.NominativoAgente">Nominativo Agente:</label>
+        <input type="text" asp-for="@Model.NominativoAgente" placeholder="Inserisci nominativo..">
         <br>
         <br>
-        <label for="DataTrscrizioneVerbale">Data trascrizione verbale:</label>
-        <input type="date" id="DataTrscrizioneVerbale" name="DataTrscrizioneVerbale">
+        <label asp-for="@Model.DataTrascrizioneVerbale">Data trascrizione verbale:</label>
+        <input type="date" asp-for="@Model.DataTrascrizioneVerbale">
         <br>
         <br>
-        <label for="Importo">Importo:</label>
-        <input type="number" id="Importo" name="Importo" step="0.01">
+        <label asp-for="@Model.Importo">Importo:</label>
+        <input type="number" asp-for="@Model.Importo" step="0.01" placeholder="Inserisci importo..">
         <br>
         <br>
-        <label for="DecurtamentoPunti">Decurtamento Punti:</label>
-        <input type="number" id="DecurtamentoPunti" name="DecurtamentoPunti">
+        <label asp-for="@Model.DecurtamentoPunti">Decurtamento Punti:</label>
+        <input type="number" asp-for="@Model.DecurtamentoPunti" placeholder="Inserisci numero punti..">
         <br>
         <br>
-        <label for="IdAnagrafica">Trasgressore:</label>
-        <select id="IdAnagrafica" name="IdAnagrafica">
+        <label asp-for="@Model.IdAnagrafica">Trasgressore:</label>
+        <select asp-for="@Model.IdAnagrafica">
             @*ciclo foreach per le opzioni, value è idanagrafica, la scritta è nome e cognome*@
-            <option value="1">cicla</option>
-            <option value="2">cicla</option>
-            <option value="3">cicla</option>
+            @foreach (var violazione in ViewBag.listaViolazioni)
+            {
+                <option value="@violazione.Id">@violazione.TipoViolazione</option>
+            }
         </select>
         <br>
         <br>
-        <label for="IdViolazione">Tipo Violazione:</label>
-        <select id="IdViolazione" name="IdViolazione">
+        <label asp-for="@Model.IdViolazione">Tipo Violazione:</label>
+        <select asp-for="@Model.IdViolazione">
             @*ciclo foreach per le opzioni, value è idviolazione, la scritta è descrizione abbreviata coi 3 punti*@
-            <option value="1">cicla</option>
-            <option value="2">cicla</option>
-            <option value="3">cicla</option>
+            @foreach (var violazione in ViewBag.listaViolazioni)
+            {
+                <option value="@violazione.Id">@violazione.TipoViolazione</option>
+            }
         </select>
         <br>
         <br>

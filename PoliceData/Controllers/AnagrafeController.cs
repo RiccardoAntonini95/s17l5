@@ -31,7 +31,7 @@ namespace PoliceData.Controllers
             }
             catch (Exception ex) { }
             finally { ConnDb.conn.Close(); }
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Home"); //aggiungere feedback riuscita
         }
     }
 }
