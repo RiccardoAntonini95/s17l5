@@ -41,9 +41,9 @@
         <label asp-for="@Model.IdAnagrafica">Trasgressore:</label>
         <select asp-for="@Model.IdAnagrafica">
             @*ciclo foreach per le opzioni, value è idanagrafica, la scritta è nome e cognome*@
-            @foreach (var violazione in ViewBag.listaViolazioni)
+            @foreach (var trasgressore in ViewBag.listaAnagrafiche)
             {
-                <option value="@violazione.Id">@violazione.TipoViolazione</option>
+                <option value="@trasgressore.Id">@trasgressore.Cognome @trasgressore.Nome</option>
             }
         </select>
         <br>
