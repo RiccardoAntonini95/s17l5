@@ -1,0 +1,54 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<form class="text-center" method="post" asp-controller="Verbale" asp-action="AggiungiVerbale">
+    <fieldset>
+        <legend>Nuovo Verbale:</legend>
+        <label for="DataViolazione">Data Violazione:</label>
+        <input type="date" id="DataViolazione" name="DataViolazione">
+        <br>
+        <br>
+        <label for="IndirizzoViolazione">Indirizzo Violazione:</label>
+        <input type="text" id="IndirizzoViolazione" name="IndirizzoViolazione">
+        <br>
+        <br>
+        <label for="NominativoAgente">Nominativo Agente:</label>
+        <input type="text" id="NominativoAgente" name="NominativoAgente">
+        <br>
+        <br>
+        <label for="DataTrscrizioneVerbale">Data trascrizione verbale:</label>
+        <input type="date" id="DataTrscrizioneVerbale" name="DataTrscrizioneVerbale">
+        <br>
+        <br>
+        <label for="Importo">Importo:</label>
+        <input type="number" id="Importo" name="Importo" step="0.01">
+        <br>
+        <br>
+        <label for="DecurtamentoPunti">Decurtamento Punti:</label>
+        <input type="number" id="DecurtamentoPunti" name="DecurtamentoPunti">
+        <br>
+        <br>
+        <label for="IdAnagrafica">Trasgressore:</label>
+        <select id="IdAnagrafica" name="IdAnagrafica">
+            @*ciclo foreach per le opzioni, value è idanagrafica, la scritta è nome e cognome*@
+            <option value="1">cicla</option>
+            <option value="2">cicla</option>
+            <option value="3">cicla</option>
+        </select>
+        <br>
+        <br>
+        <label for="IdViolazione">Tipo Violazione:</label>
+        <select id="IdViolazione" name="IdViolazione">
+            @*ciclo foreach per le opzioni, value è idviolazione, la scritta è descrizione abbreviata coi 3 punti*@
+            <option value="1">cicla</option>
+            <option value="2">cicla</option>
+            <option value="3">cicla</option>
+        </select>
+        <br>
+        <br>
+        <button type="submit" value="Submit">Aggiungi Anagrafica</button>
+    </fieldset>
+</form>
