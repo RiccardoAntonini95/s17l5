@@ -7,3 +7,5 @@ CreateDatabase
 PopulateDb
 PopulateVerbale
 ```
+
+### Per concludere va cambiata la connection string per la connessione al Db, che è contenuta in Models/ConnDb.cs
