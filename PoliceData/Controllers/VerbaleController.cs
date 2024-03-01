@@ -29,7 +29,7 @@ namespace PoliceData.Controllers
                         listaViolazioni.Add(violazione);
                     }
                     ViewBag.listaViolazioni = listaViolazioni;
-                    ConnDb.conn.Close(); //è necessario chiudere la connessione per fare un'altra query
+                    ConnDb.conn.Close(); 
                 }
 
                 ConnDb.conn.Open();

@@ -93,8 +93,5 @@ namespace PoliceData.Controllers
         }
 
     }
-    //1) totale verbali trascritti raggruppati per trasgressore
-    //2) totale punti decurtati raggruppati per trasgressore
-    //3) visualizzare importo, cognome, nome, data di violazione e decurtamento punti delle violazioni che superano 10 punti
-    //4) violazioni il cui importo è maggiore di 400 euro
+
 }
